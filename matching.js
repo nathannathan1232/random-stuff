@@ -10,6 +10,12 @@ function match(word, pat) {
 			} else if(word[i + j] !== map[pat[j]]) {
 				matches = false;
 			}
+			var s = 0;
+			for(var x in map)
+				if(map[x] == word[i + j])
+					s++;
+			if(s > 1)
+				matches = false;
 		}
 		if(matches)
 			return true;
